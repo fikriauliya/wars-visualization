@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wars Throughout Human History</title>
+</head>
+<body>
+  <div class="header">
+    <h1>⚔️ Wars Throughout Human History</h1>
+    <p>An interactive visualization of armed conflicts across the ages</p>
+  </div>
+
+  <div class="stats-bar">
+    <div class="stat"><div class="value" id="stat-total">—</div><div class="label">Total Wars</div></div>
+    <div class="stat"><div class="value" id="stat-casualties">—</div><div class="label">Est. Casualties</div></div>
+    <div class="stat"><div class="value" id="stat-major">—</div><div class="label">Major Wars</div></div>
+    <div class="stat"><div class="value" id="stat-span">—</div><div class="label">Time Span</div></div>
+  </div>
+
+  <div class="filters">
+    <div class="filter-group">
+      <label>Region</label>
+      <select id="filter-region"><option value="all">All Regions</option></select>
+    </div>
+    <div class="filter-group">
+      <label>Scale</label>
+      <select id="filter-scale">
+        <option value="all">All</option>
+        <option value="major">Major</option>
+        <option value="minor">Minor</option>
+      </select>
+    </div>
+    <div class="filter-group">
+      <label>Era</label>
+      <select id="filter-era">
+        <option value="all">All Eras</option>
+        <option value="Ancient">Ancient</option>
+        <option value="Medieval">Medieval</option>
+        <option value="Early Modern">Early Modern</option>
+        <option value="19th Century">19th Century</option>
+        <option value="20th Century">20th Century</option>
+        <option value="21st Century">21st Century</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="tabs">
+    <button class="tab active" data-tab="timeline">📊 Timeline</button>
+    <button class="tab" data-tab="casualties">💀 Casualties</button>
+    <button class="tab" data-tab="frequency">📈 Frequency</button>
+    <button class="tab" data-tab="list">📋 List</button>
+  </div>
+
+  <section class="section active" id="section-timeline">
+    <h2>War Timeline</h2>
+    <div class="chart-container" style="height: 2000px;">
+      <canvas id="chart-timeline"></canvas>
+    </div>
+  </section>
+
+  <section class="section" id="section-casualties">
+    <h2>Casualties by Conflict (Top 25)</h2>
+    <div class="chart-container" style="height: 800px;">
+      <canvas id="chart-casualties"></canvas>
+    </div>
+    <h2>Casualties Over Time (Bubble Chart)</h2>
+    <div class="chart-container" style="height: 500px;">
+      <canvas id="chart-bubble"></canvas>
+    </div>
+  </section>
+
+  <section class="section" id="section-frequency">
+    <h2>Wars by Period</h2>
+    <div class="chart-row">
+      <div class="chart-container" style="height: 400px;">
+        <canvas id="chart-frequency"></canvas>
+      </div>
+      <div class="chart-container" style="height: 400px;">
+        <canvas id="chart-type"></canvas>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="section-list">
+    <h2>All Conflicts</h2>
+    <div class="war-list" id="war-list"></div>
+  </section>
+
+  <script type="module" src="./app.js"></script>
+</body>
+</html>

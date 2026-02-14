@@ -1,0 +1,7 @@
+{
+  "name": "wars-visualization",
+  "version": "1.0.0",
+  "dependencies": {
+    "chart.js": "^4.4.0"
+  }
+}
